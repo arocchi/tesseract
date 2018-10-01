@@ -9,8 +9,6 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <exec_depend>bullet3_ros</exec_depend>
-  <exec_depend>fcl_ros</exec_depend>
-  <exec_depend>libccd_ros</exec_depend>
   
   <export>
     <metapackage/>
