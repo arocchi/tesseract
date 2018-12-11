@@ -6,7 +6,6 @@ TESSERACT_IGNORE_WARNINGS_POP
 
 #include "tesseract_collision/bullet/bullet_discrete_simple_manager.h"
 #include "tesseract_collision/bullet/bullet_discrete_bvh_manager.h"
-#include "tesseract_collision/fcl/fcl_discrete_managers.h"
 
 void addCollisionObjects(tesseract::DiscreteContactManagerBase& checker, bool use_convex_mesh = false)
 {
@@ -174,12 +173,6 @@ TEST(TesseractCollisionUnit, BulletDiscreteBVHCollisionBoxBoxConvexHullUnit)
   runTest(checker);
 }
 
-TEST(TesseractCollisionUnit, FCLDiscreteBVHCollisionBoxBoxUnit)
-{
-  tesseract::tesseract_fcl::FCLDiscreteBVHManager checker;
-  addCollisionObjects(checker, false);
-  runTest(checker);
-}
 
 // TODO: Levi, enable once FCL PR #338
 // TEST(TesseractCollisionUnit, FCLDiscreteBVHCollisionBoxBoxConvexHullUnit)

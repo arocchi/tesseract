@@ -6,7 +6,6 @@ TESSERACT_IGNORE_WARNINGS_POP
 
 #include "tesseract_collision/bullet/bullet_discrete_simple_manager.h"
 #include "tesseract_collision/bullet/bullet_discrete_bvh_manager.h"
-#include "tesseract_collision/fcl/fcl_discrete_managers.h"
 
 void addCollisionObjects(tesseract::DiscreteContactManagerBase& checker)
 {
@@ -150,13 +149,6 @@ TEST(TesseractCollisionUnit, BulletDiscreteSimpleCollisionBoxConeUnit)
 TEST(TesseractCollisionUnit, BulletDiscreteBVHCollisionBoxConeUnit)
 {
   tesseract::tesseract_bullet::BulletDiscreteBVHManager checker;
-  addCollisionObjects(checker);
-  runTest(checker);
-}
-
-TEST(TesseractCollisionUnit, FCLDiscreteBVHCollisionBoxConeUnit)
-{
-  tesseract::tesseract_fcl::FCLDiscreteBVHManager checker;
   addCollisionObjects(checker);
   runTest(checker);
 }

@@ -10,7 +10,6 @@ TESSERACT_IGNORE_WARNINGS_POP
 #include "tesseract_collision/bullet/bullet_discrete_bvh_manager.h"
 #include "tesseract_collision/bullet/bullet_cast_simple_manager.h"
 #include "tesseract_collision/bullet/bullet_cast_bvh_manager.h"
-#include "tesseract_collision/fcl/fcl_discrete_managers.h"
 
 template <class T>
 void addCollisionObjects(T& checker)
@@ -125,16 +124,6 @@ TEST(TesseractCollisionUnit, BulletDiscreteSimpleCollisionCompoundCompoundUnit)
 TEST(TesseractCollisionUnit, BulletDiscreteBVHCollisionCompoundCompoundUnit)
 {
   tesseract::tesseract_bullet::BulletDiscreteBVHManager checker;
-  addCollisionObjects<tesseract::DiscreteContactManagerBase>(checker);
-  runTest(checker);
-
-  tesseract::DiscreteContactManagerBasePtr cloned_checker = checker.clone();
-  runTest(*cloned_checker);
-}
-
-TEST(TesseractCollisionUnit, FCLDiscreteBVHCollisionCompoundCompoundUnit)
-{
-  tesseract::tesseract_fcl::FCLDiscreteBVHManager checker;
   addCollisionObjects<tesseract::DiscreteContactManagerBase>(checker);
   runTest(checker);
 
