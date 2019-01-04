@@ -6,7 +6,6 @@ TESSERACT_IGNORE_WARNINGS_POP
 
 #include "tesseract_collision/bullet/bullet_discrete_simple_manager.h"
 #include "tesseract_collision/bullet/bullet_discrete_bvh_manager.h"
-#include "tesseract_collision/fcl/fcl_discrete_managers.h"
 
 void addCollisionObjects(tesseract::DiscreteContactManagerBase& checker)
 {
@@ -140,13 +139,6 @@ TEST(TesseractCollisionUnit, BulletDiscreteBVHCollisionCloneUnit)
   tesseract::tesseract_bullet::BulletDiscreteBVHManager checker;
   addCollisionObjects(checker);
   runTest(checker, 0.001, 0.001, 0.001);
-}
-
-TEST(TesseractCollisionUnit, FCLDiscreteBVHCollisionCloneUnit)
-{
-  tesseract::tesseract_fcl::FCLDiscreteBVHManager checker;
-  addCollisionObjects(checker);
-  runTest(checker, 0.001, 0.001, 0.005);  // TODO: FCL requires a large tolerance because it using GJK currently
 }
 
 int main(int argc, char** argv)

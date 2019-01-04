@@ -6,7 +6,6 @@ TESSERACT_IGNORE_WARNINGS_POP
 
 #include "tesseract_collision/bullet/bullet_discrete_simple_manager.h"
 #include "tesseract_collision/bullet/bullet_discrete_bvh_manager.h"
-#include "tesseract_collision/fcl/fcl_discrete_managers.h"
 #include <gtest/gtest.h>
 #include <ros/ros.h>
 
@@ -117,21 +116,6 @@ TEST(TesseractCollisionUnit, BulletDiscreteBVHCollisionBoxSphereConvexHullUnit)
   addCollisionObjects(checker, true);
   runTest(checker, 0.02);
 }
-
-TEST(TesseractCollisionUnit, FCLDiscreteBVHCollisionOctomapSphereUnit)
-{
-  tesseract::tesseract_fcl::FCLDiscreteBVHManager checker;
-  addCollisionObjects(checker);
-  runTest(checker, 0.16);  // TODO: There appears to be an issue in fcl for octomap::OcTree.
-}
-
-// TODO: Levi, enable once FCL PR #338
-// TEST(TesseractCollisionUnit, FCLDiscreteBVHCollisionBoxSphereConvexHullUnit)
-//{
-//  tesseract::tesseract_fcl::FCLDiscreteBVHManager checker;
-//  addCollisionObjects(checker, true);
-//  runTest(checker, 0.16); // TODO: There appears to be an issue in fcl for octomap::OcTree.
-//}
 
 int main(int argc, char** argv)
 {
